@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="azure" data-background-color="White" data-image="https://www.lareserva.com/sites/default/files/styles/article_image/public/field/image/natf.jpeg?itok=DEXEy9Ft">
+<div class="sidebar"  [attr.data-color]='color1'  data-background-color="black" [attr.data-image]='url'>
 	<!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -76,26 +76,35 @@
 			</li>
 
 
-			<a data-toggle="collapse" type="button" aria-expanded="false" class="dropdown-item btn-block "
-				href="#homeSubmenu1">
-				<i class="material-icons">library_books</i>
+          <li class="nav-item ">
+            <a class="nav-link collapsed" data-toggle="collapse" href="#pagesExamples" aria-expanded="false">
+            <i class="material-icons">library_books</i>
+            <p>BaseConocimiento</p>
+             <b class="caret"></b>
+        </a>
+      <div class="collapse" id="pagesExamples" style="">
+        <ul class="nav">
+          <li class="nav-item ">
+              <a class="nav-link">
+					      	<i class="material-icons">email</i>
+                    Pricing 
+              </a>
+          </li>
+        </ul>
+			</div>
 
-				BaseConocimiento</a>
 
-			<div class="collapse" id="homeSubmenu1">
 
-				<li class="dropdown-item">
-					<a class="nav-link">
-						<i class="material-icons">email</i>
-						Xsales</a>
-				</li>
+			<!-- <a data-toggle="collapse" type="button" aria-expanded="false" class="dropdown-item btn-block "
+				href="#homeSubmenu1"> -->
+
+			<!-- <div class="collapse" id="homeSubmenu1">
 
 				<li class="dropdown-item">
 					<a class="nav-link">
 						<i class="material-icons">library_books</i>
 						Pronaca</a>
-				</li>
-			</div>
+				</li> -->
 
 		</ul>
 	</div>

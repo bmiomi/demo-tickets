@@ -34,7 +34,6 @@ cargarInfo(){
       let ModeloRegistro_ = new ModeloRegistro()
       ModeloRegistro_.id='1'
       ModeloRegistro_.registro=this.usuario
-      console.log(` respuesta Objeto: ${ModeloRegistro_}`)
   }
   
 
@@ -42,7 +41,6 @@ cargarInfo(){
 onSubmit(form:NgForm){
     
     if ( form.invalid ) {
-      console.log('Formulario no válido');
       return;
     }
    

@@ -5,8 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OrderByPipe implements PipeTransform {
 
-  transform(value:): any {
-
+  transform(value:string): any {
     return null;
   }
 

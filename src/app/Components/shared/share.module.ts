@@ -6,8 +6,6 @@ import { SidebarComponent } from '../../Components/shared/sidebar/sidebar.compon
 
 import { RouterModule } from '@angular/router';
 
-import { PageModule } from '../../Components/page/page.module';
-
 
 @NgModule({
   exports:[NavbarComponent,SidebarComponent],
