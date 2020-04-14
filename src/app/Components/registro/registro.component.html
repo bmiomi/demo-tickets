@@ -1,0 +1,45 @@
+<div class="container col-md-6 ">
+	<div class="card mx-auto ">
+		<article class="card-body">
+			<a routerLink="/Login" class="float-right btn btn-outline-primary">Sign in</a>
+			<h4 class="card-title mb-5 mt-1">Sign up</h4>
+			<p>
+				<a href="" class="btn btn-block btn-outline-info"><i class="fa fa-twitter" aria-hidden="true"></i>
+           Login via
+					Twitter</a>
+
+				<a href="" class="btn btn-block btn-outline-primary"> <i class="fa fa-facebook-square" aria-hidden="true"></i>
+   Login via
+					facebook</a>
+			</p>
+			<hr>
+			<form #f="ngForm" (ngSubmit)="valor(f)">
+				<div class="form-group">
+					<label for="name">Nombre</label>
+					<input  [(ngModel)] = "usuario.nombre" name="name" class="form-control" placeholder="Ingrese su nombre" type="text">
+        </div> <!-- form-group// -->
+
+					<div class="form-group">
+						<label for="name">Email</label>
+						<input  [(ngModel)] = "usuario.email" name="email" class="form-control" placeholder="Ingrese un Email" type="email"
+            required>
+          </div> <!-- form-group// -->
+
+						<div class="form-group">
+							<label for="name">Password</label>
+							<input [(ngModel)] = "usuario.password"   name="password"class="form-control" placeholder="******" type="password"
+              required>
+    </div> <!-- form-group// -->
+							<div class="row">
+								<div class="col-md-12 ">
+									<div class="form-group center-block">
+										<button            [disabled]="!f.valid" 
+                    class="btn btn-primary btn-block"> Create</button>
+									</div> <!-- form-group// -->
+								</div>
+							</div> <!-- .row// -->
+			</form>
+
+		</article>
+	</div>
+</div>

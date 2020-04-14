@@ -1,0 +1,123 @@
+<div class="row justify-content-center align-items-center ">
+	<div class="col-md-12">
+		<div class="card">
+
+			<div class="card-header card-header-primary">
+				<h5 class="card-title">Registro Tickets</h5>
+			</div>
+			<div class="card-body">
+				<form autocomplete="off" [formGroup]="forma" (ngSubmit)="GuardarCambios()">
+
+					<div class="form-row">
+
+						<div class="form-group col-md-1">
+							<label >IdTickt</label>
+							<input disabled type="numeric" class="form-control"
+              formControlName="idTicket" >
+            </div>
+
+							<div class="form-group col-md-2">
+								<label >Modo Solicitud</label>
+								<select formControlName="ModoSolicitud" class="form-control">
+                      <option >Selecciona Solicitud</option>
+                      <option *ngFor="let lista of listas01" >{{lista}}</option>
+                  </select>
+							</div>
+
+  
+							<div formGroupName='Direccion' class='row'>
+					
+          				<div class="col form-group" [ngClass]=" forma.value.Direccion.Escalamiento === 'XSales'?'col-md-6':'col-md-12'" >
+
+										<label >El caso sera escalado a:</label>
+										<select  formControlName="Escalamiento"  class="form-control" >
+                      <option selected>Selecciona Nivel</option>
+                      <option *ngFor="let lista2 of listas" >{{lista2}}</option>
+                  </select>
+									</div>
+
+								<div class="form-group  col-md-6 " *ngIf="forma.value.Direccion.Escalamiento === 'XSales'">
+										<label >ID SUPXSM:</label>
+										<input  formControlName="idXsales" type="text" class="form-control" placeholder="Ingrese el SUPXSM"/>
+  								</div>
+
+
+							</div>
+
+								<div class="form-group "[ngClass]="{'col-md': forma.value.Direccion.Escalamiento === 'XSales',
+                'col-md':forma.value.Direccion.Escalamiento!='Xsales'}" >
+									<label >Tipo de Problema</label>
+									<select formControlName="Problema" class="form-control">
+                    <option  selected> Selecciona una Opcion</option>
+                    <option *ngFor=" let lista05 of listas05"> {{lista05}} </option>
+                   </select>
+								</div>
+
+					</div>
+
+					<div class="form-row" >
+
+							<div formGroupName='opcion' class=' row'>
+
+					<div class="form-group " [ngClass]="{'col-md-12': forma.value.opcion.Region != 'Dz',
+                'col-md-6':forma.value.opcion.Region === 'Dz'}" >
+									<label >Selecione la región:</label>
+									<select  formControlName ="Region" class="form-control">
+                    <option selected > Seleccione Region o Dz</option>
+                    <option *ngFor="let lista2 of listas02">{{lista2}}</option>
+                  </select>
+								</div>
+
+						<div class="form-group col-md-6" *ngIf="forma.value.opcion.Region === 'Dz'">
+									<label selected >Selecione la NombreDz:</label>
+									<select  formControlName ="NameDz" class="form-control">
+                    <option  selected > Selecciona Nivel</option>
+                    <option *ngFor="let lista4 of listas04" >{{lista4}}</option>
+                  </select>
+								</div>		
+</div>
+
+								<div class="form-group" [ngClass]="forma.value.opcion.Region != 'Dz' ? 'col-md-9':'col-md'">
+									<label >Status Del caso:</label>
+									<select formControlName="Status" class="form-control">
+                    <option selected> Selecciona Status</option>
+                    <option *ngFor="let lista3 of listas03" >{{lista3}}</option>
+                  </select>
+								</div>
+					</div>
+
+					<div class="form-row">
+								<div class="form-group col-md-12">
+									<label  >Descripcion</label>
+									<div class="form-group bmd-form-group">
+										<textarea class="form-control " formControlName="Descripcion"
+                   placeholder='ingrese la descripcion de la incidencia'>
+                  </textarea>
+									</div>
+								</div>
+					</div>
+
+					<div class="form-row">
+
+								<div class="form-group col-md-12">
+									<label >Solucion</label>
+									<div class="form-group bmd-form-group">
+
+										<textarea class="form-control"   formControlName="Solucion"  placeholder='ingrese la descripcion de la incidencia'>
+                  </textarea>
+									</div>
+								</div>
+					</div>
+
+						<button [disabled]="!forma.valid" class="btn btn-primary">Send</button>
+				</form>
+				<hr>
+				<h5>Status:{{forma.status}}</h5>
+				<pre>
+        {{forma.value | json}}
+
+</pre>
+			</div>
+		</div>
+	</div>
+</div>

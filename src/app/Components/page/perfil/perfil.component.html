@@ -1,0 +1,117 @@
+<div class="row">
+	<div class="col-md-8">
+		<div class="card">
+			<div class="card-header card-header-primary">
+				<h4 class="card-title">Editar Perfil</h4>
+				<p class="card-category">Completa tu perfil</p>
+			</div>
+			<div class="card-body">
+
+				<form (ngSubmit)='datos()' #f="ngForm">
+					<div class="row">
+
+							<div class="col-md-4">
+								<div class="form-group bmd-form-group">
+									<label class="bmd-label-floating"> </label>
+									<input  [(ngModel)] = "usuario.Nombre"  name ="nombre" type="text" class="form-control" placeholder="Nombre">
+                  </div>
+								</div>
+
+								<div class="col-md-4">
+											<div class="form-group bmd-form-group">
+												<label class="bmd-label-floating"> </label>
+												<input type="text" class="form-control" placeholder="Apellido"
+                        name="SegundoN"
+                        [(ngModel)] = "usuario.SegundoN"
+                        >
+                        </div>
+
+								</div>
+
+								<div class="col-md-4">
+									<div class="form-group bmd-form-group">
+										<label class="bmd-label-floating"> </label>
+										<input type="email" [(ngModel)] = "usuario.email" name="email" placeholder="Email" class="form-control">
+                  </div>
+									</div>                  
+					</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group bmd-form-group">
+													<label class="bmd-label-floating"> </label>
+													<input type="text" class="form-control" placeholder="Fecha de Nacimiento"
+                          name="FechaN"
+                          [(ngModel)] = "usuario.FechaN"
+                          >
+                        </div>
+												</div>
+                        <div class="col-md-6">
+                        <div class="form-group bmd-form-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="customFile">
+                          <label class="custom-file-label" for="customFile">Carga tu imagen.</label>
+                        </div>
+                        </div>
+                        </div>
+
+
+
+											</div>
+											
+                      
+                      <div class="row">
+												<div class="col-md-4">
+													<div class="form-group bmd-form-group">
+														<label class="bmd-label-floating" > </label>
+														<input type="text" class="form-control" placeholder="Ciudad" 
+                            name="Ciudad"
+                            [(ngModel)] = "usuario.Ciudad"
+                            >
+                        </div>
+													</div>
+
+													</div>
+
+													<div class="row">
+														<div class="col-md-12">
+															<div class="form-group">
+																<label>Acerca de Mi</label>
+																<div class="form-group bmd-form-group">
+																	<label class="bmd-label-floating">  </label>
+																	<textarea class="form-control" rows="5" placeholder="..... "
+                                  name="AcercaUsuario"
+                                  required
+                                  [(ngModel)] = "usuario.AcercaUsuario"
+                                  ></textarea>
+																</div>
+															</div>
+														</div>
+													</div>
+                          
+													<button [disabled]="!f.valid" class="btn btn-primary pull-right">Actualizar Perfil</button>
+													<div class="clearfix"></div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="col-md-4">
+		<div class="card card-profile">
+			<div class="card-avatar">
+				<a href="#pablo">
+					<img class="img" src="https://demos.creative-tim.com/material-dashboard-dark/assets/img/faces/marc.jpg">
+                  </a>
+			</div>
+			<div class="card-body">
+				<h6 class="card-category">Tnlg-Developer / Analisis-Sistema</h6>
+				<h4 class="card-title">Bryan Miño</h4>
+				<p class="card-description">
+					Don't be scared of the truth because we need to restart the human foundation in truth And I love you
+					like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+				</p>
+				<a href="#pablo" class="btn btn-primary btn-round">Sigueme</a>
+			</div>
+		</div>
+	</div>
+</div>
