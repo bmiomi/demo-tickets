@@ -13,12 +13,13 @@ import { AcountSettingsComponent } from './acount-settings/acount-settings.compo
 import { PagesComponent } from './pages.component';
 
 import { routes } from './routing.module';
+import { TviewComponent } from './titview.component';
 
 
 @NgModule({
   imports: [CommonModule,RouterModule.forRoot(routes),ShareModule,FormsModule,ReactiveFormsModule],
   exports:[DashbordComponent,HomeComponent,PerfilComponent,TicketComponent],
-  declarations: [DashbordComponent,HomeComponent,PerfilComponent,TicketComponent, AcountSettingsComponent, PagesComponent]
+  declarations: [DashbordComponent,HomeComponent,PerfilComponent,TicketComponent, AcountSettingsComponent, PagesComponent, TviewComponent]
 })
 
 export class PageModule { }
