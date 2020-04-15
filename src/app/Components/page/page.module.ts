@@ -10,12 +10,15 @@ import { TicketComponent} from './ticket/ticket.component';
 
 import { ShareModule } from '../../Components/shared/share.module';
 import { AcountSettingsComponent } from './acount-settings/acount-settings.component';
+import { PagesComponent } from './pages.component';
+
+import { routes } from './routing.module';
 
 
 @NgModule({
-  imports: [CommonModule,RouterModule,ShareModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule,RouterModule.forRoot(routes),ShareModule,FormsModule,ReactiveFormsModule],
   exports:[DashbordComponent,HomeComponent,PerfilComponent,TicketComponent],
-  declarations: [DashbordComponent,HomeComponent,PerfilComponent,TicketComponent, AcountSettingsComponent]
+  declarations: [DashbordComponent,HomeComponent,PerfilComponent,TicketComponent, AcountSettingsComponent, PagesComponent]
 })
 
 export class PageModule { }

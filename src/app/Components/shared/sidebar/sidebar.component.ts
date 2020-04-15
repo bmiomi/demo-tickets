@@ -7,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  @Input() color1="danger"
+  @Input() color1
   @Input() url= 'https://www.lareserva.com/sites/default/files/styles/article_image/public/field/image/natf.jpeg'
   
   
