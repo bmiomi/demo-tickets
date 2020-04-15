@@ -25,8 +25,8 @@ export class AcountSettingsComponent implements OnInit {
     }
 
   cargarArchivo(){
-
-   let file = Swal.fire({
+    const reader = new FileReader()
+    Swal.fire({
       title: 'Seleccione el archivo',
       input: 'file',
       confirmButtonText:'Cargar',
@@ -42,7 +42,6 @@ export class AcountSettingsComponent implements OnInit {
         console.log(e.value)
         let wopts:XLSX.WritingOptions={ bookType: 'xlsx', type: 'array' };
 
-        const reader = new FileReader()
         reader.onload = (e) => {
           let data = e.target.result 
           let workbook:XLSX.WorkBook = XLSX.read(data,{ type: 'binary' })
@@ -55,37 +54,9 @@ export class AcountSettingsComponent implements OnInit {
   
         reader.readAsBinaryString(e.value)
 
-    })
+    }).catch( ()=>{
+      reader.onerror = (error)=>{ console.log('error')}     })
 
   }
 
-  
-  Archivo(archivo) {
-      let files = archivo.target.files;
-    console.log(files)
-      //   let R_archivo = new FileReader()
-      //   R_archivo.onload = (e)=>{
-      //     let data = (<any>e.target).result;  
-      //     let workbook = XLSX.read(data,{ type: 'binary' })
-      //     workbook.SheetNames.forEach( (sheetName)=>{
-
-      //       let XL_row_object = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);  
-      //       let json_object = JSON.stringify(XL_row_object);  
-
-      //     })
-      //   }
-    
-      // R_archivo.onerror = function(ex) {  
-      //     console.log(ex);  
-      //   };  
-      //   R_archivo.readAsBinaryString(archivo);  
-   
-      // console.log(R_archivo)
-   
-    }
-
-
-
-
-    
 }
