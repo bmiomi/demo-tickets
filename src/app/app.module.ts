@@ -18,14 +18,18 @@ import {RegistroService} from '../Service/registro.service';
 
 import {AuthGuardsGuard} from '../Guard/auth-guards.guard'
 
-import { ShareModule } from './Components/shared/share.module';
 import { PageModule } from './Components/page/page.module';
+import { ShareModule } from './Components/shared/share.module';
+
+//pipe
 import { OrderByPipe } from './Components/Pipes/order-by.pipe';
 
 
 @NgModule({
   
-  imports: [ ReactiveFormsModule,BrowserModule, FormsModule ,RouterModule.forRoot(routes),HttpClientModule,PageModule],
+  imports: 
+  [ ReactiveFormsModule,BrowserModule, 
+   FormsModule ,RouterModule.forRoot(routes),HttpClientModule,PageModule,ShareModule],
   declarations: [ 
     AppComponent, 
     LoginComponent,
