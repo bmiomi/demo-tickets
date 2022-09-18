@@ -1,88 +1,44 @@
+<!-- http://ashishkhan.com/blog/buddy-whatsapp-chat-bot-with-python -->
+<div
+  class="sidebar"
+  [attr.data-color]="Itcolor"
+  [attr.data-background-color]="Sbcolor"
+  [attr.data-image]="url"
+>
+  <div class="logo">
+    <a routerLink="/home" class="simple-text logo-normal">Tickets/Sys</a>
+  </div>
 
-<div class="sidebar" [attr.data-color]='color1' data-background-color="black" [attr.data-image]='url'>
-	<div class="logo">
-		<a routerLink="/home" class="simple-text logo-normal">Tickets/Sys</a>
-	</div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      <li class="nav-menu" *ngFor="let i of _sbar.Menu">
+        <a *ngIf="i.url" class="nav-link" [routerLink]="[i.url]">
+          <i class="nav-item material-icons">{{ i.icon }}</i>
+          <p>{{ i.title }}</p>
+        </a>
 
-	<div class="sidebar-wrapper">
-		<ul class=" nav ">
+        <div *ngIf="i.submenu" class="nav">
+          <li class="nav-menu">
+            <a
+              class="nav-link collapsed"
+              data-toggle="collapse"
+              href="#{{ i.pr }}"
+            >
+              <i class="material-icons">{{ i.icon }}</i>
+              <p>{{ i.title }}</p>
+            </a>
+          </li>
 
-
-			<li class="nav-item dropdown" [routerLinkActive]="['active']">
-				<a class="nav-link" [routerLink]="['dashbord']">
-					<i class="material-icons">dashboard</i>
-					<p>Dashboard</p>
-				</a>
-
-				<div class="dropdown-menu dropdown-menu-right">
-					<a class="dropdown-item">
-						<i class="material-icons">dashboard</i>
-						<p>Dashboard</p>
-					</a>
-				</div>
-			</li>
-
-			<li class="nav-item" [routerLinkActive]="['active']">
-				<a class="nav-link" [routerLink]="['perfil']">
-					<i class="material-icons">face</i>
-					<p>User Profile</p>
-				</a>
-			</li>
-
-			<!-- http://ashishkhan.com/blog/buddy-whatsapp-chat-bot-with-python -->
-			<li class="nav-item">
-				<a class="nav-link collapsed" data-toggle="collapse" href="#TicktsSub">
-					<i class="material-icons">confirmation_number</i>
-					<p>Tickets</p>
-					<b class="caret"></b>
-				</a>
-				<div class="collapse" id="TicktsSub">
-					<ul class="nav">
-						<li class="nav-item" [routerLinkActive]="['active']">
-							<a class="nav-link"  [routerLink]="['TRegistro']" >
-								<i class="material-icons">assignment</i>
-								Registro</a>
-						</li>
-
-						<li class="nav-item" [routerLinkActive]="['active']">
-							<a class="nav-link" [routerLink]="['VTRegistro']" >
-								<i class="material-icons">visibility</i>
-								Visualizacion</a>
-						</li>
-					</ul>
-				</div>
-
-			</li>
-
-
-			<li class="nav-item ">
-
-				<a class="nav-link collapsed" data-toggle="collapse" href="#pagesExamples">
-					<i class="material-icons">library_books</i>
-					<p>BaseConocimiento</p>
-					<b class="caret"></b>
-				</a>
-
-				<div class="collapse" id="pagesExamples">
-					<ul class="nav">
-
-						<li class="nav-item " [routerLinkActive]="['active ']">
-							<a class="nav-link">
-								<i class="material-icons">library_books</i>
-								Xsales
-							</a>
-						</li>
-
-						<li class="nav-item" [routerLinkActive]="['active ']">
-							<a class="nav-link">
-								<i class="material-icons">library_books</i>
-								Pronaca
-							</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-
-		</ul>
-	</div>
+          <ul class="nav-menu collapse" id="{{ i.id }}">
+            <li class="nav-item" *ngFor="let item of i.submenu">
+              <a [routerLink]="[item.url]" class="nav-link">
+                <i class="material-icons">{{ item.icon }}</i>
+                <p>{{ item.title }}</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
